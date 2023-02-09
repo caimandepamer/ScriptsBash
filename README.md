@@ -2,11 +2,37 @@
 Bash Scripts to make work easier
 
 ### To install "monokai" color scheme:
-```bash
+```/bin/bash
 mkdir ~/.vim/colors/
 wget -O ~/.vim/colors/monokai.vim https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim
 ```
-------------
+### To configure ident lines fot tabs:
+*add this lines on .vimrc:*
+```/bin/bash
+set list
+set listchars=multispace:\ \ ┊
+```
+
+The result like: 
+```/bin/bash
+ 1 #!/bin/bash
+ 2 SRV=$1;
+ 3   ┊  ┊while read LINEA; do
+ 4   ┊  ┊USU=$(echo $LINEA | cut -d'
+ 5   ┊  ┊PASS=$(echo $LINEA | cut -d
+ 6   ┊  ┊echo "toxsocks sshpass -p $
+ 7   ┊  ┊RES=$(toxsocks sshpass  -p 
+ 8   ┊  ┊  if [ "$?" -eq "0" ]; then
+ 9   ┊  ┊  ┊ echo "si se tiene acces
+10   ┊  ┊  ┊ break;
+11   ┊  ┊  fi
+12   ┊ done < ./lista_usuarios_pass.
+13   ┊ echo "Se ejecuta ssh: $USU  $
+14   ┊ echo "$PASS" > /tmp/clave
+15   ┊ toxsocks sshpass  ┊-p "$PASS"
+```
+
+---
 
 ### Px2Py.sh usage:
 `./Px2Py.sh -p6 [num_cpus] | -p7 [num_cpus] | -p8 [num_cpus]`
