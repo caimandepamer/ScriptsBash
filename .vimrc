@@ -10,7 +10,10 @@ set softtabstop=2
 set smarttab
 set expandtab
 set smartcase
-
+" Indentation
+set list
+set listchars=multispace:\ \ ┊
+"
 set t_Co=256
 set background=dark
 colorscheme monokai 
