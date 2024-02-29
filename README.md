@@ -42,3 +42,22 @@ The result like:
 ./Px2Py.sh -p8 4
    4 cores of Power 8 are:  65.72 rperfs
 ```
+
+#### Personalize BASH
+
+**Print a separator between commands (after the 'Enter')**
+
+*Add this on your .bashrc*
+
+```bash
+function printNewLine() 
+{
+  COLOR='\033[2;38m' #GREY
+  COLS=$(tput cols)
+  echo -e "${COLOR}";
+  printf '%*s\n' $(tput cols) | tr ' ' '=';
+  echo -e "${NC}"
+}
+
+trap 'printNewLine' DEBUG
+```bash
