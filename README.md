@@ -54,10 +54,10 @@ function printNewLine()
 {
   COLOR='\033[2;38m' #GREY
   COLS=$(tput cols)
+  CHAR='='
   echo -e "${COLOR}";
-  printf '%*s\n' $(tput cols) | tr ' ' '=';
+  printf '%*s\n' $(tput cols) | tr ' ' "$CHAR";
   echo -e "${NC}"
 }
-
 trap 'printNewLine' DEBUG
-```bash
+```
