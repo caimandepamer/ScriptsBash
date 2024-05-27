@@ -14,4 +14,4 @@ MSG=$(curl http://${OLLAMAHOST}:11434/api/chat -d '{
   ]
 }' 2>/dev/null)
 MSG2=$(echo $MSG | jq .message | jq .content|cat ); 
-echo "${MSG@E}"
+echo "${MSG2@E}"
