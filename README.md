@@ -61,3 +61,37 @@ function printNewLine()
 }
 trap 'printNewLine' DEBUG
 ```
+
+
+## Ask to Ollama
+
+*Script to ask installation of ollama using curl and jq*
+
+### Download the script: 
+
+`curl -o curl2ollama.sh https://raw.githubusercontent.com/caimandepamer/ScriptsBash/main/curl2ollama.sh && chmod +x curl2ollama.sh`
+
+*Optional: to install as command:*
+
+```sh
+curl -o curl2ollama.sh https://raw.githubusercontent.com/caimandepamer/ScriptsBash/main/curl2ollama.sh
+sudo mv curl2ollama.sh /usr/bin/curl2ollama
+sudo chmod +x /usr/bin/curl2ollama
+```
+
+### Use the script:
+
+```sh
+export OLLAMAHOST=ip or hostname of your ollama installation
+./curl2ollama.sh "in one line, how to update debian"
+```
+
+*or if installed as command:*
+
+```sh
+export OLLAMAHOST=ip or hostname of your ollama installation
+curl2ollama "in one line, generate md5sum of file in bash "
+```
+
+
+
